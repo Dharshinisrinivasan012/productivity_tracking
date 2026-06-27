@@ -6,7 +6,17 @@ const notificationSchema = new Schema<INotification>(
     userId: { type: Schema.Types.ObjectId, ref: 'User', required: true, index: true },
     type: {
       type: String,
-      enum: ['task_reminder', 'deadline_alert', 'habit_reminder', 'study_reminder', 'system', 'achievement'],
+      enum: [
+  'task_reminder',
+  'deadline_alert',
+  'habit_reminder',
+  'habit_completed',
+  'task_completed',
+  'study_reminder',
+  'study_completed',
+  'system',
+  'achievement'
+],
       required: true,
     },
     title: { type: String, required: true, trim: true, maxlength: 200 },
